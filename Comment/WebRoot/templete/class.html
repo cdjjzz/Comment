@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <title>班级信息</title>
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet"
+      href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+  <style type="text/css">
+     .table-align{
+         margin-left: 25%;
+     }
+ </style>
+ </head>
+ <body style="font-family:'Courier New'">
+ 
+     <h3 class="text-center">${request.contextPath}-下面是班级ID【${classId}】，班级名称【${className}】的人员信息</h3>
+     <div class="col-md-6 column table-align">
+         <table class="table">
+             <tr>
+                 <th>序号</th>
+                 <th>姓名</th>
+                 <th>密码</th>
+                 <th>年龄</th>
+                 <th>地址</th>
+             </tr>
+             <!-- FreeMarker使用List循环 -->
+             <#list users as user>
+                 <tr>
+                     <td>${user.id}</td>
+                     <td>${user.username}</td>
+                     <td>${user.password}</td>
+                     <td>${user.age}</td>
+                     <td>${user.address}</td>
+                 </tr>
+             </#list>
+         </table>
+     </div>
+ </body>
+ </html>
